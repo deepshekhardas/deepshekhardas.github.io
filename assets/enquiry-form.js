@@ -1,0 +1,13 @@
+import {b as React,j as s} from './index-BwnWIdL-.js';
+export function EnquiryForm(){
+  const [form,setForm]=React.useState({name:'',company:'',email:'',brief:''});
+  const [review,setReview]=React.useState(false);
+  const recipient='deepshekhardas1234@gmail.com';
+  const subject='Project enquiry'+(form.company.trim()?' — '+form.company.trim():'');
+  const body=['Hi Deepshekhar,','',form.brief.trim(),'','Name: '+form.name.trim(),'Company: '+(form.company.trim()||'Not specified'),'Reply email: '+form.email.trim()].join('\n');
+  const emailUrl='mailto:'+recipient+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  const field=(name,label,type='text',required=true)=>s.jsxs('div',{className:'form-field',children:[s.jsx('label',{htmlFor:'project-'+name,children:label+(required?' *':'')}),s.jsx(type==='textarea'?'textarea':'input',{id:'project-'+name,name,type:type==='textarea'?undefined:type,required,value:form[name],minLength:name==='brief'?20:name==='name'?2:undefined,maxLength:{name:120,company:160,email:254,brief:2000}[name],rows:type==='textarea'?5:undefined,autoComplete:name==='name'?'name':name==='email'?'email':name==='company'?'organization':undefined,onChange:event=>setForm(previous=>({...previous,[name]:event.target.value}))})]},name);
+  if(review)return s.jsxs('div',{className:'email-draft',children:[s.jsx('h3',{children:'Review your project enquiry'}),s.jsx('p',{children:'Your message has not been sent. Open your email app and press Send to contact me.'}),s.jsx('textarea',{'aria-label':'Your email draft',readOnly:true,value:body,rows:9,style:{width:'100%'}}),s.jsx('a',{href:emailUrl,className:'portfolio-primary',children:'Open email app ↗'}),s.jsx('p',{className:'form-note',children:'No email app configured? Copy this draft and email '+recipient+'.'}),s.jsx('button',{type:'button',className:'portfolio-secondary',onClick:()=>setReview(false),children:'← Edit details'})]});
+  return s.jsxs('form',{onSubmit:event=>{event.preventDefault();if(event.currentTarget.reportValidity())setReview(true);},children:[s.jsx('p',{className:'form-heading',children:'A little about your project'}),s.jsxs('div',{className:'form-two-col',children:[field('name','Your name'),field('company','Company','text',false)]}),field('email','Email address','email'),field('brief','What are you building?','textarea'),s.jsx('button',{type:'submit',className:'portfolio-primary',children:'Review email draft ↗'}),s.jsx('p',{className:'form-note',children:'This form prepares an email draft. Nothing is submitted or stored by this website.'})]});
+}
+export function OwnerInboxLink(){return null;}
