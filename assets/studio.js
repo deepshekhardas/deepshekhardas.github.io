@@ -1,5 +1,21 @@
 import { EnquiryForm, OwnerInboxLink } from "./enquiry-form.js";
 import { b as React, j as s } from "./index-BwnWIdL-.js";
+import { createStudioWorld } from "./studio-world.js";
+
+function StudioWorld() {
+  const host = React.useRef(null);
+  React.useEffect(() => createStudioWorld(host.current), []);
+  return s.jsxs("div", { className: "world-shell", children: [
+    s.jsx("div", { ref: host, className: "world-canvas", "aria-hidden": true }),
+    s.jsxs("div", { className: "world-caption", children: [
+      s.jsx("span", { className: "world-live", children: "THE BUILD SPACE" }),
+      s.jsx("span", { children: "A little world. A lot of possibilities." })
+    ] }),
+    s.jsx("button", { className: "world-motion", type: "button", "aria-pressed": false,
+      onClick: (event) => { const paused = host.current?.dataset.paused !== "true"; host.current.dataset.paused = String(paused); event.currentTarget.setAttribute("aria-pressed", String(paused)); event.currentTarget.textContent = paused ? "Play motion" : "Pause motion"; }, children: "Pause motion" }),
+    s.jsx("p", { className: "world-hint", children: "MOVE YOUR POINTER TO EXPLORE" })
+  ] });
+}
 
 export function CinematicHero() {
   return s.jsxs("section", {
@@ -9,18 +25,7 @@ export function CinematicHero() {
     onPointerLeave: resetHero,
     children: [
       s.jsx("div", { className: "hero-ambient", "aria-hidden": true }),
-      s.jsx("div", {
-        className: "hero-art-stage",
-        "aria-hidden": true,
-        children: s.jsx("img", {
-          className: "hero-sculpture",
-          src: "./assets/hero-sculpture.png",
-          width: 1536,
-          height: 1024,
-          alt: "",
-          fetchPriority: "high",
-        }),
-      }),
+      s.jsx(StudioWorld, {}),
       s.jsxs("div", {
         className: "hero-copy",
         children: [
@@ -33,9 +38,9 @@ export function CinematicHero() {
           }),
           s.jsxs("h1", {
             children: [
-              s.jsx("span", { children: "React products." }),
-              s.jsx("em", { children: "Focused fixes." }),
-              s.jsx("span", { children: "Built with care." }),
+              s.jsx("span", { children: "Ideas to life." }),
+              s.jsx("em", { children: "Code to craft." }),
+              s.jsx("span", { children: "Let’s build yours." }),
             ],
           }),
           s.jsx("p", {
