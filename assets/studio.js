@@ -46,7 +46,7 @@ export function CinematicHero() {
           s.jsx("p", {
             className: "hero-intro",
             children:
-              "React and TypeScript interfaces, focused debugging, and Node.js real-time features. Clear scope, thoughtful delivery, and written updates.",
+              "Have a React or TypeScript bug blocking your release? Start with one reproducible issue: a focused fix, regression coverage where practical, and clear written handover.",
           }),
           s.jsx("p", { className: "hero-role", children: "CTO at EzeFare" }),
           s.jsxs("div", {
@@ -56,14 +56,16 @@ export function CinematicHero() {
                 href: "#contact-section",
                 className: "portfolio-primary",
                 children: [
-                  "Let’s build something",
+                  "Discuss a bug fix",
                   s.jsx("span", { children: "↗" }),
                 ],
               }),
               s.jsx("a", {
-                href: "#work-section",
+                href: "https://github.com/CopilotKit/CopilotKit/pull/6969",
                 className: "portfolio-secondary",
-                children: "Discover my work ↓",
+                children: "See my React fix ↗",
+                target: "_blank",
+                rel: "noopener noreferrer",
               }),
             ],
           }),
@@ -273,11 +275,11 @@ const contributions = [
 ];
 const services = [
   {
-    name: "Your idea, brought to life.",
-    kind: "WEB PRODUCTS & MVPs",
+    name: "One bug. A clear fix.",
+    kind: "REACT & TYPESCRIPT DEBUGGING",
     description:
-      "Shape a focused first version. Build the interface, connect the backend, and make the core user journey work.",
-    tags: "Web applications / MVP development",
+      "Share the failing flow, expected behaviour and relevant code. We agree the scope before work starts. Delivery includes the patch, a regression test where practical, and written verification notes.",
+    tags: "Bug reproduction / Focused patch / Regression coverage",
   },
   {
     name: "AI with a purpose.",
