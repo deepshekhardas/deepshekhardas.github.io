@@ -49,6 +49,11 @@ export function CinematicHero() {
               "Have a React or TypeScript bug blocking your release? Start with one reproducible issue: a focused fix, regression coverage where practical, and clear written handover.",
           }),
           s.jsx("p", { className: "hero-role", children: "CTO at EzeFare" }),
+          s.jsx("a", {
+            href: "#ezefare-case-study",
+            className: "hero-case-link",
+            children: "Read my EzeFare case study ↓",
+          }),
           s.jsxs("div", {
             className: "studio-actions",
             children: [
@@ -347,6 +352,93 @@ function SectionHeading({ number, label, title, italic, description }) {
             children: [title, s.jsx("em", { children: italic })],
           }),
           description && s.jsx("p", { children: description }),
+        ],
+      }),
+    ],
+  });
+}
+
+function EzeFareCase() {
+  React.useEffect(() => {
+    if (window.location.hash !== "#ezefare-case-study") return;
+    const frame = requestAnimationFrame(() => {
+      document.getElementById("ezefare-case-study")?.scrollIntoView({ block: "start" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  return s.jsxs("section", {
+    id: "ezefare-case-study",
+    className: "ezefare-case section-space",
+    "aria-labelledby": "ezefare-case-title",
+    children: [
+      s.jsxs("div", {
+        className: "ezefare-case-meta",
+        children: [
+          s.jsx("p", { className: "studio-kicker", children: "COMPANY WORK / EZEFARE" }),
+          s.jsx("p", { className: "ezefare-role", children: "CTO · Since October 2026" }),
+        ],
+      }),
+      s.jsxs("div", {
+        className: "ezefare-case-layout",
+        children: [
+          s.jsxs("div", {
+            className: "ezefare-case-intro",
+            children: [
+              s.jsxs("h2", {
+                id: "ezefare-case-title",
+                children: ["My work at", s.jsx("em", { children: "EzeFare." })],
+              }),
+              s.jsx("p", {
+                className: "ezefare-case-lead",
+                children: "Alongside my CTO role, I personally implemented geofencing, dashboard and bulk scheduling at EzeFare.",
+              }),
+              s.jsx("p", {
+                className: "ezefare-company-context",
+                children: "EzeFare is a corporate employee transportation platform.",
+              }),
+              s.jsxs("a", {
+                href: "https://ezefare.tech/",
+                ...external,
+                className: "ezefare-company-link",
+                "aria-label": "Visit EzeFare’s public company website, opens in a new tab",
+                children: ["Visit the company website ", arrow()],
+              }),
+            ],
+          }),
+          s.jsxs("div", {
+            className: "ezefare-contributions",
+            children: [
+              s.jsx("p", { className: "ezefare-contribution-label", children: "MY HANDS-ON CONTRIBUTION" }),
+              s.jsx("ol", {
+                role: "list",
+                children: ["Geofencing", "Dashboard", "Bulk scheduling"].map((module, index) =>
+                  s.jsxs("li", {
+                    children: [
+                      s.jsx("span", { "aria-hidden": true, children: "0" + (index + 1) }),
+                      s.jsx("h3", { children: module }),
+                    ],
+                  }, module),
+                ),
+              }),
+              s.jsx("p", { className: "ezefare-contribution-foot", children: "Technical leadership with direct implementation work." }),
+            ],
+          }),
+        ],
+      }),
+      s.jsxs("div", {
+        className: "ezefare-case-footer",
+        children: [
+          s.jsx("p", {
+            children: "The independent demos and open-source contributions below are separate examples of my technical work.",
+          }),
+          s.jsxs("div", {
+            className: "ezefare-proof-links",
+            children: [
+              s.jsx("a", { href: "#work-section", children: "Independent demos ↓" }),
+              s.jsx("a", { href: "#open-source-section", children: "Open-source contributions ↓" }),
+            ],
+          }),
         ],
       }),
     ],
@@ -971,6 +1063,7 @@ export function StudioPortfolio({ Calendar }) {
               }),
             ],
           }),
+          s.jsx(EzeFareCase, {}),
           s.jsx(Work, {}),
           s.jsx(Services, {}),
           s.jsx(OpenSource, { Calendar }),

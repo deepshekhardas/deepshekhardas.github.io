@@ -1,4 +1,4 @@
-import { StudioPortfolio } from './studio.js?v=3d-20261020';
+import { StudioPortfolio } from './studio.js?v=cto-20261107';
 const __vite__mapDeps = (
   i,
   m = __vite__mapDeps,

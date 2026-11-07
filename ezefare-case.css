@@ -1,0 +1,186 @@
+/* EzeFare role and personal contribution, using the existing portfolio palette. */
+.studio .hero-case-link {
+  display: block;
+  width: fit-content;
+  margin-top: 20px;
+  color: var(--gold);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.ezefare-case {
+  position: relative;
+  background: #11130f;
+  border-top: 1px solid #ddc39925;
+  border-bottom: 1px solid #ddc39925;
+  scroll-margin-top: 12px;
+}
+.ezefare-case-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.studio .ezefare-role {
+  color: #d8d2c5;
+  border: 1px solid #ddc39940;
+  border-radius: 99px;
+  padding: 8px 15px;
+  font-size: 12px;
+}
+.ezefare-case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: clamp(40px, 7vw, 112px);
+  align-items: start;
+}
+.ezefare-case-intro {
+  max-width: 650px;
+}
+.studio .ezefare-case-intro h2 {
+  font-size: clamp(47px, 5.2vw, 80px);
+  line-height: 1.04;
+  letter-spacing: -.06em;
+}
+.studio .ezefare-case-lead {
+  max-width: 570px;
+  margin-top: 30px;
+  color: #e8e3d8;
+  font-size: 20px;
+  line-height: 1.65;
+}
+.studio .ezefare-company-context {
+  max-width: 510px;
+  margin-top: 20px;
+  color: #b7b2a8;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.ezefare-company-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 0 8px;
+  margin-top: 8px;
+  border-bottom: 1px solid #ddc39970;
+  color: var(--gold);
+  font-size: 13px;
+}
+.ezefare-company-link span {
+  font-size: 20px;
+}
+.ezefare-contributions {
+  padding: 29px 32px 24px;
+  border: 1px solid #ddc3993b;
+  border-radius: 8px;
+  background: #191c15;
+}
+.studio .ezefare-contribution-label {
+  font-size: 10px;
+  letter-spacing: .14em;
+  color: #c6bb9f;
+}
+.ezefare-contributions ol {
+  list-style: none;
+  padding: 0;
+  margin: 21px 0 0;
+}
+.ezefare-contributions li {
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  gap: 18px;
+  align-items: baseline;
+  padding: 24px 0;
+  border-top: 1px solid #ddc39925;
+}
+.ezefare-contributions li > span {
+  font-size: 11px;
+  color: #b2a78c;
+}
+.studio .ezefare-contributions h3 {
+  font-weight: 400;
+  font-size: clamp(24px, 2.5vw, 36px);
+  line-height: 1.25;
+  letter-spacing: -.035em;
+}
+.studio .ezefare-contribution-foot {
+  border-top: 1px solid #ddc39925;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #b7b2a8;
+}
+.ezefare-case-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+  border-top: 1px solid #ddc39925;
+  margin-top: 56px;
+  padding-top: 25px;
+}
+.studio .ezefare-case-footer > p {
+  max-width: 500px;
+  color: #b7b2a8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.ezefare-proof-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px 24px;
+}
+.ezefare-proof-links a {
+  color: #e6cfaa;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.ezefare-case a:hover,
+.studio .hero-case-link:hover {
+  color: #fff0d4;
+}
+@media (max-width: 900px) {
+  .ezefare-case-layout {
+    gap: 35px;
+  }
+  .ezefare-contributions {
+    padding: 25px;
+  }
+  .ezefare-case-footer {
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+@media (max-width: 650px) {
+  .ezefare-case-meta {
+    align-items: start;
+    flex-direction: column;
+    gap: 17px;
+    margin-bottom: 31px;
+  }
+  .ezefare-case-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .studio .ezefare-case-intro h2 {
+    font-size: clamp(45px, 12vw, 64px);
+  }
+  .studio .ezefare-case-lead {
+    margin-top: 24px;
+    font-size: 18px;
+  }
+  .ezefare-contributions li {
+    padding: 20px 0;
+  }
+  .studio .ezefare-contributions h3 {
+    font-size: 29px;
+  }
+  .ezefare-case-footer {
+    margin-top: 35px;
+  }
+  .studio .hero-case-link {
+    font-size: 12px;
+    margin-top: 17px;
+  }
+}
